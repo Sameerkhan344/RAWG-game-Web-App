@@ -1,7 +1,14 @@
 import React, { useContext, useEffect, useState } from "react";
 import logo from "../assets/Images/logo.png";
-import { HiMoon, HiOutlineMagnifyingGlass, HiSun } from "react-icons/hi2";
+import {
+  HiMoon,
+  HiOutlineBars3CenterLeft,
+  HiOutlineXMark,
+  HiOutlineMagnifyingGlass,
+  HiSun,
+} from "react-icons/hi2";
 import { ThemeContext } from "../Context/ThemeContext";
+import SideNavGenreList from "./SideNavGenreList";
 
 const Header = () => {
   const [toggle, setToggle] = useState(true);
@@ -13,7 +20,32 @@ const Header = () => {
   return (
     <>
       <div className="flex items-center p-3">
-        <img src={logo} height={60} width={60} alt="" />
+        <img
+          src={logo}
+          height={60}
+          width={60}
+          alt=""
+          className="hidden md:block"
+        />
+        <div className="md:hidden">
+          {!toggle ? (
+            <HiOutlineBars3CenterLeft
+              onClick={() => setToggle(!toggle)}
+              className="dark:text-white text-[25px] cursor-pointer"
+            />
+          ) : (
+            <HiOutlineXMark
+              onClick={() => setToggle(!toggle)}
+              className="dark:text-white text-[25px] cursor-pointer"
+            />
+          )}
+          {toggle ? (
+            <div className="absolute z-10 bg-white mt-3 dark:bg-[#121212">
+              <SideNavGenreList />
+            </div>
+          ) : null}
+        </div>
+
         <div className="flex bg-slate-200 p-2 w-full items-center mx-5 rounded-full">
           <HiOutlineMagnifyingGlass />
           <input
