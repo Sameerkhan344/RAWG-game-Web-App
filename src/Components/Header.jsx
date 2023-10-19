@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import logo from "../assets/Images/logo.png";
 import { AiOutlineSearch } from "react-icons/ai";
-import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/Bs";
+import { HiMoon, HiOutlineMagnifyingGlass, HiSun } from "react-icons/hi2";
 import { ThemeContext } from "../Context/ThemeContext";
 
 const Header = () => {
@@ -25,7 +25,7 @@ const Header = () => {
         </div>
         <div>
           {theme == "light" ? (
-            <BsFillMoonStarsFill
+            <HiMoon
               className="text-[35px] bg-slate-200 text-black p-2 rounded-full cursor-pointer"
               onClick={() => {
                 setTheme("dark");
@@ -33,7 +33,7 @@ const Header = () => {
               }}
             />
           ) : (
-            <BsFillSunFill
+            <HiSun
               className="text-[35px] bg-slate-200 text-black p-2 rounded-full cursor-pointer"
               onClick={() => {
                 setTheme("light");
