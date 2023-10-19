@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import logo from "../assets/Images/logo.png";
-import { AiOutlineSearch } from "react-icons/ai";
-import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/Bs";
+import { HiMoon, HiOutlineMagnifyingGlass, HiSun } from "react-icons/hi2";
 import { ThemeContext } from "../Context/ThemeContext";
 
 const Header = () => {
@@ -16,7 +15,7 @@ const Header = () => {
       <div className="flex items-center p-3">
         <img src={logo} height={60} width={60} alt="" />
         <div className="flex bg-slate-200 p-2 w-full items-center mx-5 rounded-full">
-          <AiOutlineSearch />
+          <HiOutlineMagnifyingGlass />
           <input
             type="text"
             placeholder="Search Games"
@@ -25,7 +24,7 @@ const Header = () => {
         </div>
         <div>
           {theme == "light" ? (
-            <BsFillMoonStarsFill
+            <HiMoon
               className="text-[35px] bg-slate-200 text-black p-2 rounded-full cursor-pointer"
               onClick={() => {
                 setTheme("dark");
@@ -33,7 +32,7 @@ const Header = () => {
               }}
             />
           ) : (
-            <BsFillSunFill
+            <HiSun
               className="text-[35px] bg-slate-200 text-black p-2 rounded-full cursor-pointer"
               onClick={() => {
                 setTheme("light");

@@ -1,9 +1,6 @@
 import React, { useEffect } from "react";
 
 const GamesByGenresId = ({ gameList, selectedGenresName }) => {
-  useEffect(() => {
-    console.log("GameList:", gameList);
-  }, []);
   return (
     <>
       <div>
